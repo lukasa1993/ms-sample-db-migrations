@@ -37,8 +37,8 @@ jobs:
       - name: Repository Dispatch
         uses: myrotvorets/trigger-repository-dispatch-action@1.0.0
         with:
-          token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
           repo: lukasa1993/ms-starter
           type: docker-rebuild
           payload: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "commit": ${{ toJSON(github.event.head_commit) }}, "repo": "${{ github.repository }}", "ms": "${{ secrets.MS_NAME }}" }'
-      
+
