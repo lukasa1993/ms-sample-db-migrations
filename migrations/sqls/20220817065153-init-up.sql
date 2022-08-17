@@ -1,6 +1,8 @@
 /* Replace with your SQL commands */
 
-drop table "Users";
+CREATE EXTENSION pgcrypto;
+
+drop table IF EXISTS "Users";
 
 create table "Users"
 (
