@@ -32,7 +32,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/${{ secrets.MS_NAME }}:latest
+          tags: ghcr.io/${{ github.GITHUB_REPOSITORY }}:latest
 
       - name: Repository Dispatch
         uses: myrotvorets/trigger-repository-dispatch-action@1.0.0
@@ -40,5 +40,5 @@ jobs:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
           repo: lukasa1993/ms-starter
           type: docker-rebuild
-          payload: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "commit": ${{ toJSON(github.event.head_commit) }}, "repo": "${{ github.repository }}", "ms": "${{ secrets.MS_NAME }}" }'
+          payload: '{ "ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "commit": ${{ toJSON(github.event.head_commit) }}, "repo": "${{ github.repository }}", "ms": "${{ github.event.repository.name }}" }'
 
