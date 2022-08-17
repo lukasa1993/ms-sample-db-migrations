@@ -13,7 +13,7 @@ RUN npm install --only=production --legacy-peer-deps --no-fund --no-package-lock
 
 RUN /usr/local/bin/node-prune
 
-FROM node:14-alpine as release
+FROM node:16-alpine as release
 WORKDIR /opt/app
 COPY --from=base /opt/app /opt/app
 
