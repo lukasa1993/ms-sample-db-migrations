@@ -1,0 +1,23 @@
+{
+  "name": "luma-db-migrations",
+  "version": "1.0.0",
+  "description": "migrate whole of luma db migrations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LumaLogistics/db-migrations.git"
+  },
+  "author": "LumaLogistics",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LumaLogistics/db-migrations/issues"
+  },
+  "homepage": "https://github.com/LumaLogistics/db-migrations#readme",
+  "dependencies": {
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2"
+  }
+}
