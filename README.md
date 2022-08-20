@@ -1,7 +1,7 @@
 # sample-db-migrations
-incremental only forward micrations for whole database
+incremental only forward migrations for whole database
 
 ## demands
 1. only forward migrations
-1. this repo only serves PostgreSQL and nothing else
+2. this repo only serves PostgresSQL and nothing else
 

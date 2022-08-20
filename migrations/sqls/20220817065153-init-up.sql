@@ -23,6 +23,7 @@ create table "Users"
     name         varchar                                            not null,
     email        varchar                                            not null,
     code         varchar null,
+    type         varchar                  default 'user'            not null,
     meta         jsonb                    default '{}'              not null,
     created      timestamp with time zone default now()             not null,
     updated      timestamp with time zone default now()             not null
@@ -33,5 +34,10 @@ values ('LLC Demo', 'support@example.com');
 
 insert into "Users"("company_uuid", "name", "email")
 select uuid as "company_uuid", 'demo' as "name", 'demo@example.com' as "email"
+from "Company"
+where email = 'support@example.com';
+
+insert into "Users"("company_uuid", "name", "email", "type")
+select uuid as "company_uuid", 'admin' as "name", 'admin@example.com' as "email", 'admin' as "type"
 from "Company"
 where email = 'support@example.com';
