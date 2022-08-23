@@ -32,8 +32,8 @@ create table "Users"
 insert into "Company"("name", "email")
 values ('LLC Demo', 'support@example.com');
 
-insert into "Users"("company_uuid", "name", "email")
-select uuid as "company_uuid", 'demo' as "name", 'demo@example.com' as "email"
+insert into "Users"("company_uuid", "name", "email", "code")
+select uuid as "company_uuid", 'demo' as "name", 'demo@example.com' as "email", '1234567890' as "code"
 from "Company"
 where email = 'support@example.com';
 
